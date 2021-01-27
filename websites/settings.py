@@ -1,4 +1,5 @@
 import os  # isort:skip
+import sys
 gettext = lambda s: s
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 """
@@ -20,10 +21,8 @@ from websites.settings_conf import *
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Application definition
-
-
-
-
+qa4sm_dir = os.path.join( Path(__file__).resolve().parent.parent.parent, 'qa4sm')
+sys.path.insert(0, qa4sm_dir)
 
 ROOT_URLCONF = 'websites.urls'
 
@@ -166,7 +165,9 @@ INSTALLED_APPS = [
     'djangocms_style',
     'djangocms_googlemap',
     'djangocms_video',
-    'websites'
+    'websites',
+    # 'validator',
+    # '/home/tercjak/Projects/qa4sm/validator/'
 ]
 
 LANGUAGES = (
@@ -192,12 +193,7 @@ CMS_LANGUAGES = {
     },
 }
 
-CMS_TEMPLATES = (
-    ## Customize this
-    ('fullwidth.html', 'Fullwidth'),
-    ('sidebar_left.html', 'Sidebar Left'),
-    ('sidebar_right.html', 'Sidebar Right')
-)
+CMS_TEMPLATES = CMS_TEMPLATES
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
