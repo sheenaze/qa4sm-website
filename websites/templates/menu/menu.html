@@ -1,0 +1,12 @@
+{% load menu_tags %}
+
+{% for child in children %}
+<li class="nav-item mr-md-3 mb-1 mb-md-0 child{% if child.selected %} selected{% endif %}{% if child.ancestor %} ancestor{% endif %}{% if child.sibling %} sibling{% endif %}{% if child.descendant %} descendant{% endif %}">
+    <a class="navbar-btn btn btn-outline-primary" href="{{ child.attr.redirect_url|default:child.get_absolute_url }}"><span class="fas fa-cogs"></span> {{ child.get_menu_title }}</a>
+    {% if child.children %}
+	<ul>
+		{% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
+	</ul>
+	{% endif %}
+</li>
+{% endfor %}

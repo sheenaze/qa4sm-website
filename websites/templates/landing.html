@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load cms_tags %}
 
-</body>
-</html>
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block content %}
+    <div class="content">
+        {% placeholder "content" %}
+    </div>
+    <div class="splashbox">
+        {% placeholder "splashbox" %}
+    </div>
+<!--    <div class="feature">-->
+<!--        {% placeholder "feature" %}-->
+<!--    </div>-->
+<!--    <div class="sidebar">-->
+<!--        {% placeholder "sidebar" %}-->
+<!--    </div>-->
+{% endblock content %}
