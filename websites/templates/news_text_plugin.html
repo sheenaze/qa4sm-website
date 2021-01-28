@@ -11,15 +11,13 @@
     <link href="{% static 'css/scheme.css' %}" rel="stylesheet">
     <link href="{% static 'css/service.css' %}" rel="stylesheet">
     <script src="{% static 'js/auxiliary_functions.js' %}"></script>
+<!--<h1>Hello {% if request.user.is_authenticated %}{{ request.user.first_name }} {{ request.user.last_name}}{% else %}Guest{% endif %}</h1>-->
 <body>
     <div class="container">
         <div class="card-deck mb-3">
             <div class="col">
                 <div class="card mb-4 mx-0 box-shadow">
                     {{ body|safe }}
-<!--                    {% for element in body %}-->
-<!--                    {{ element }}-->
-<!--                    {% endfor %}-->
                 </div>
             </div>
         </div>
