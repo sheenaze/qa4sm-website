@@ -166,6 +166,7 @@ INSTALLED_APPS = [
     'djangocms_googlemap',
     'djangocms_video',
     'websites',
+    'news_cms_integration'
     # 'validator',
     # '/home/tercjak/Projects/qa4sm/validator/'
 ]
@@ -227,12 +228,12 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.filters'
 )
 
-CKEDITOR_SETTINGS = {
-    'language': '{{ language }}',
-    'toolbar_HTMLField': [
-        ['Undo', 'Redo'],
-        ['ShowBlocks'],
-        ['Format', 'Styles'],
-    ],
-    'skin': 'moono-lisa',
-}
+# CKEDITOR_SETTINGS = {
+#     'language': '{{ language }}',
+#     'toolbar_HTMLField': [
+#         ['Undo', 'Redo'],
+#         ['ShowBlocks'],
+#         ['Format', 'Styles'],
+#     ],
+#     'skin': 'moono-lisa',
+# }
