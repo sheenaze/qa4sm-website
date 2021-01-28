@@ -226,3 +226,13 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+
+CKEDITOR_SETTINGS = {
+    'language': '{{ language }}',
+    'toolbar_HTMLField': [
+        ['Undo', 'Redo'],
+        ['ShowBlocks'],
+        ['Format', 'Styles'],
+    ],
+    'skin': 'moono-lisa',
+}
