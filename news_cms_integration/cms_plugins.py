@@ -7,12 +7,18 @@ from cms.plugin_base import CMSPluginBase
 
 @plugin_pool.register_plugin
 class NewsPlugin(TextPlugin):
-    name = _('News Plugin')
+    name = _('News')
     model = NewsTextModel
     render_template = "news_text_plugin.html"
-    cache = False
-
+    # cache = False
 
     def render(self, context, instance, placeholder):
+        context.update({
+                'title': instance.title,
+                'introduction': instance.introduction,
+                'body': instance.body,
+            })
         context = super().render(context, instance, placeholder)
         return context
+
+
