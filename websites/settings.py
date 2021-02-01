@@ -1,8 +1,6 @@
-from django.utils.translation import gettext_lazy as _
 import os  # isort:skip
 import sys
 gettext = lambda s: s
-
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 """
 Django settings for websites project.
